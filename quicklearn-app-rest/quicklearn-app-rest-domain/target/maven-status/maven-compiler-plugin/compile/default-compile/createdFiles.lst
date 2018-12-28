@@ -1,0 +1,6 @@
+com/quicklearn/domain/EnrollmentId.class
+com/quicklearn/domain/Course.class
+com/quicklearn/domain/CourseSession.class
+com/quicklearn/domain/Enrollment.class
+com/quicklearn/domain/Teacher.class
+com/quicklearn/domain/Student.class
