@@ -33,6 +33,18 @@ public class Course {
 	}
 	
 	
+	
+
+	public Course(String categorie, String domain, String title, String description, String code) {
+		super();
+		this.categorie = categorie;
+		this.domain = domain;
+		this.title = title;
+		this.description = description;
+		this.code = code;
+	}
+
+
 
 
 	public Course(String categorie, String domain, String title, String description, String code,Collection<CourseSession>  courseSession ) {

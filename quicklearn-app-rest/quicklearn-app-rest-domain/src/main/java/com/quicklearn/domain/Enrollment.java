@@ -9,12 +9,16 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
 
+
+import org.springframework.stereotype.Component;
+
+@Component
 @Entity
 public class Enrollment {
-	
+
 	 @Id
 	 @Column(name="ENROLLEMENT_ID")
-    private EnrollmentId id;
+     private EnrollmentId id;
 
 
 	private Date enrolledDate;
@@ -28,21 +32,21 @@ public class Enrollment {
 		super();
 	}
 
-	public Enrollment(EnrollmentId id, Date enrolledDate, long grade, boolean isComplete, Student student,
+	public Enrollment(EnrollmentId id, Date enrolledDate, long grade, boolean isComplete, User user,
 			CourseSession courseSession) {
 		super();
 		this.id = id;
 		this.enrolledDate = enrolledDate;
 		this.grade = grade;
 		this.isComplete = isComplete;
-		this.student = student;
+		this.user = user;
 		this.courseSession = courseSession;
 	}
 
 	@MapsId("studentId")
 	@ManyToOne
 	@JoinColumn(name="STUDENT_ID")
-	private Student student;
+	private User user;
 	
 	@MapsId("courseSessionId")
 	@ManyToOne
@@ -81,12 +85,14 @@ public class Enrollment {
 		this.isComplete = isComplete;
 	}
 
-	public Student getStudent() {
-		return student;
+
+
+	public User getUser() {
+		return user;
 	}
 
-	public void setStudent(Student student) {
-		this.student = student;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	public CourseSession getCourseSession() {

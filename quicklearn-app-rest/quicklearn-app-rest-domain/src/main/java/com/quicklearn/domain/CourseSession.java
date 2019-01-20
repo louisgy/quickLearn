@@ -32,8 +32,8 @@ public class CourseSession {
 	private Course course;
 	
 	@ManyToOne 
-	  @JoinColumn(name="teacherId")
-	private Teacher teacher;
+	  @JoinColumn(name="userId")
+	private User user;
 
 	public int getId() {
 		return id;
@@ -75,12 +75,14 @@ public class CourseSession {
 		this.course = course;
 	}
 
-	public Teacher getTeacher() {
-		return teacher;
+	public User getUser() {
+		return user;
 	}
 
-	public void setTeacher(Teacher teacher) {
-		this.teacher = teacher;
+	public void setUser(User user) {
+		this.user = user;
 	}
+
+   
 
 }
