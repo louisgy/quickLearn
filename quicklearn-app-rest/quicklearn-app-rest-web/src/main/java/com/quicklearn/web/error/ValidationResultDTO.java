@@ -3,8 +3,14 @@ package com.quicklearn.web.error;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+
+
 public class ValidationResultDTO {
-	
+
 	private List<FieldErrorDTO> fieldErrors;
 	
 	private List<GlobalErrorDTO> globalErrors;

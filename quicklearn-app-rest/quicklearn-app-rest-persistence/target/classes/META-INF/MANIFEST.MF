@@ -1,11 +1,11 @@
 Manifest-Version: 1.0
+Built-By: georgy
+Build-Jdk: 11.0.2
 Implementation-Title: quicklearn-app-rest-persistence
 Implementation-Version: 0.0.1-SNAPSHOT
-Built-By: georgy
 Implementation-Vendor-Id: com.quicklearn
-Build-Jdk: 1.8.0_25
-Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
- ot-starter-parent/quicklearn-app/quicklearn-app-rest/quicklearn-app-r
- est-persistence
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-boot
+ -starter-parent/quicklearn-app/quicklearn-app-rest/quicklearn-app-rest-
+ persistence
 Created-By: Maven Integration for Eclipse
 

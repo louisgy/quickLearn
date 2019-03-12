@@ -63,6 +63,10 @@ public class CourseServiceImpl implements CourseService{
 		return (courseRepository.findByTitle(title).isEmpty());
 	}
 	
-
+	public boolean isExist(int id) {
+		return (courseRepository.existsById(id));
+	}
+	
+	
 
 }

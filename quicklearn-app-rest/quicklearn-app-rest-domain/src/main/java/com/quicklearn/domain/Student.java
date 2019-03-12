@@ -9,11 +9,16 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
-@TableGenerator(name = "Address_Gen", table = "ID_GEN", pkColumnName = "GEN_NAME", valueColumnName = "GEN_VAL", pkColumnValue = "Addr_Gen", initialValue = 10000, allocationSize = 100)
+@TableGenerator(name = "Student_Gen", 
+table = "ID_GEN", pkColumnName = "GEN_NAME", 
+valueColumnName = "GEN_VAL", 
+pkColumnValue = "Stdent_Gen", 
+initialValue = 10000, 
+allocationSize = 7)
 public class Student {
 
 	@Id
-	@GeneratedValue(generator = "Address_Gen")
+	@GeneratedValue(generator = "Student_Gen")
 	@Column(name="STUDENT_ID")
 	private int id;
 

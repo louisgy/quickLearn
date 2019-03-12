@@ -16,18 +16,14 @@ import org.springframework.stereotype.Component;
 @Entity
 public class Enrollment {
 
-	 @Id
-	 @Column(name="ENROLLEMENT_ID")
-     private EnrollmentId id;
-
+	@Id
+	@Column(name = "ENROLLEMENT_ID")
+	private EnrollmentId id;
 
 	private Date enrolledDate;
 	private long grade;
 	private boolean isComplete;
-	
-	
-	
-	
+
 	public Enrollment() {
 		super();
 	}
@@ -43,9 +39,9 @@ public class Enrollment {
 		this.courseSession = courseSession;
 	}
 
-	@MapsId("studentId")
+	@MapsId("userId")
 	@ManyToOne
-	@JoinColumn(name="STUDENT_ID")
+	@JoinColumn(name="USER_ID")
 	private User user;
 	
 	@MapsId("courseSessionId")
@@ -101,6 +97,12 @@ public class Enrollment {
 
 	public void setCourseSession(CourseSession courseSession) {
 		this.courseSession = courseSession;
+	}
+
+	@Override
+	public String toString() {
+		return "Enrollment [enrolledDate=" + enrolledDate + ", grade=" + grade + ", isComplete=" + isComplete
+				+ ", user=" + user + ", courseSession=" + courseSession + "]";
 	}
 
 	

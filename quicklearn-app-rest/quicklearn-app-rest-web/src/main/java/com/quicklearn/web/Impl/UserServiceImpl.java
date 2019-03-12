@@ -95,10 +95,21 @@ public class UserServiceImpl implements UserService {
 			else
 		return false;
 	}
+	
+	public boolean studentExist(int id ) {
+		return userRepository.existsById(id);
+	}
 
 	@Override
 	public User findUserByEmail(String email) {
 		 return userRepository.findByEmail(email);
+	}
+	
+	public boolean isTeacherExist(int id, String role) {
+		if(userRepository.findByIdAndRole(id, role) != null)
+			return  true ;
+		else			
+		return false;
 	}
 	
 }

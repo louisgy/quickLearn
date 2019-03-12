@@ -1,16 +1,24 @@
 package com.quicklearn.domain;
 
+import java.util.Collection;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.TableGenerator;
 
 @Entity
-@TableGenerator(name = "User_Id_Gen", table = "userId_GEN", pkColumnName = "GEN_NAME", valueColumnName = "GEN_VAL", pkColumnValue = "Addr_Gen", initialValue = 50000, allocationSize = 3)
+@TableGenerator(name = "User_Gen", 
+table = "ID_GEN", pkColumnName = "GEN_NAME", 
+valueColumnName = "GEN_VAL", 
+pkColumnValue = "Usr_Gen", 
+initialValue = 50000, 
+allocationSize = 6)
 public class User {
 	
 	@Id
-	@GeneratedValue(generator = "User_Id_Gen")
+	@GeneratedValue(generator = "User_Gen")
 	private int id;
 
 	private String email;
@@ -22,6 +30,14 @@ public class User {
 	private String lastName;
 	
 	private String role;
+	
+	@OneToMany(mappedBy="user")
+	private Collection<Address> address;
+	
+	@OneToMany(mappedBy="user")
+	private Collection<CourseSession> courseSession;
+	
+
 
 	public User() {
 	}

@@ -1,5 +1,6 @@
 package com.quicklearn.domain;
 
+import java.util.Collection;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -9,9 +10,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 
 @Entity
+@Table(name ="COURSE_SESSION")
 public class CourseSession {
 
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -19,13 +23,22 @@ public class CourseSession {
     private int id;
 	private Date dateStart;
 	private Date dateEnd;
-	private double averageGrade;
-	
-	
+	private double averageGrade;	
 	
 	public CourseSession() {
 		super();
 	}
+	
+	public CourseSession(Date dateStart, Date dateEnd, double averageGrade, Course course, User user) {
+		super();
+		this.dateStart = dateStart;
+		this.dateEnd = dateEnd;
+		this.averageGrade = averageGrade;
+		this.course = course;
+		this.user = user;
+	}
+
+
 
 	@ManyToOne
 	  @JoinColumn(name="courseId")
@@ -34,6 +47,13 @@ public class CourseSession {
 	@ManyToOne 
 	  @JoinColumn(name="userId")
 	private User user;
+	
+
+	
+	@OneToMany(mappedBy="courseSession")
+	private Collection<TestOpportunity> testOpportunity;
+	
+	
 
 	public int getId() {
 		return id;
@@ -82,6 +102,10 @@ public class CourseSession {
 	public void setUser(User user) {
 		this.user = user;
 	}
+
+
+
+
 
    
 

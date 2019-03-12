@@ -11,14 +11,19 @@ import javax.persistence.TableGenerator;
 
 
 @Entity
-@TableGenerator(name = "Course_Gen", table = "CRS_ID_GEN", pkColumnName = "GEN_NAME", valueColumnName = "GEN_VAL", pkColumnValue = "Addr_Gen", initialValue = 500, allocationSize = 2)
+@TableGenerator(name = "Course_Gen", 
+table = "ID_GEN", pkColumnName = "GEN_NAME", 
+valueColumnName = "GEN_VAL", 
+pkColumnValue = "Corse_Gen", 
+initialValue = 500, 
+allocationSize = 2)
 public class Course {
 
 	@Id
 	@GeneratedValue(generator = "Course_Gen")
 	private int id;
 	private String categorie;    // Java, 
-	private String domain;    //  database, finance, Aviation, Architecture, language
+	private String domain;    //   or program
 	private String title;       // Introduction to African American Studies or 
 	                            // Oracle Certified Associate, Java SE 8 Programmer 
 	                            // or CIPM - Certified Information Privacy Manager) 
@@ -28,6 +33,11 @@ public class Course {
 	@OneToMany(mappedBy="course")
 	private Collection<CourseSession> courseSession;
 	
+
+	
+	@OneToMany(mappedBy="course")
+	private Collection<Test> test;
+//	
 	public Course(){
 		//courseSession = new ArrayList<CourseSession>();
 	}
@@ -42,6 +52,34 @@ public class Course {
 		this.title = title;
 		this.description = description;
 		this.code = code;
+	}
+
+
+
+
+
+
+
+
+
+
+
+	public Collection<Test> getTest() {
+		return test;
+	}
+
+
+
+
+	public void setTest(Collection<Test> test) {
+		this.test = test;
+	}
+
+
+
+
+	public void setCourseSession(Collection<CourseSession> courseSession) {
+		this.courseSession = courseSession;
 	}
 
 

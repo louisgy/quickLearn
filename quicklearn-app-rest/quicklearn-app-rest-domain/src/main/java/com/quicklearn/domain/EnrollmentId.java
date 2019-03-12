@@ -7,14 +7,13 @@ import javax.persistence.Embeddable;
 
 @Embeddable
 public class EnrollmentId implements Serializable {
-
 		
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private int studentId;
+	private int userId;
 	
 	private int courseSessionId;
 	
@@ -23,20 +22,23 @@ public class EnrollmentId implements Serializable {
 		super();
 	}
 
-	public EnrollmentId(int studentId, int courseSessionId) {
+	public EnrollmentId(int userId, int courseSessionId) {
 		super();
-		this.studentId = studentId;
+		this.userId = userId;
 		this.courseSessionId = courseSessionId;
 	}
+
 	
-	public int getStudentId() {
-		return studentId;
+	public int getUserId() {
+		return userId;
 	}
-	
-	public void setStudentId(int studentId) {
-		this.studentId = studentId;
+
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
-	
+
+
+
 	public int getCourseSessionId() {
 		return courseSessionId;
 	}
@@ -44,15 +46,20 @@ public class EnrollmentId implements Serializable {
 	public void setCourseSessionId(int courseSessionId) {
 		this.courseSessionId = courseSessionId;
 	}
-	
+
+
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + courseSessionId;
-		result = prime * result + studentId;
+		result = prime * result + userId;
 		return result;
 	}
+
+
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -64,10 +71,12 @@ public class EnrollmentId implements Serializable {
 		EnrollmentId other = (EnrollmentId) obj;
 		if (courseSessionId != other.courseSessionId)
 			return false;
-		if (studentId != other.studentId)
+		if (userId != other.userId)
 			return false;
 		return true;
 	}
+	
+
 	
 	
 }

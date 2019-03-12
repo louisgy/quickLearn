@@ -1,0 +1,71 @@
+<?xml version="1.0" ?>
+<questions>
+	<question category="mult" id="435">  <!-- 	may select more than one answer-->
+		<instructions>Select one or more answer</instructions>
+		<statement>which of these animal can fly</statement>
+		<options>
+			<option ans="f">Mouse</option>
+			<option ans="f">eagle</option>
+			<option ans="t">bird</option>
+			<option ans="f">dog</option>
+		</options>
+		<answer>134</answer>
+	</question>
+    <question category="mult" id="978"> <!-- 	Can select only one answer-->
+		<instructions>Select one or more answer</instructions>
+		<statement>which country has the most land?</statement>
+		<options>
+			<option ans="f">Haiti</option>
+			<option ans="f">Japan</option>
+			<option ans="f">USA</option>
+			<option ans="f">Canada</option>
+		</options>
+		<answer>134</answer>
+	</question>
+	<question category="order" id="748"> 
+		<instructions>Select one or more answer</instructions>
+		<statement>which player is the most payed</statement>
+		<options>
+			<option>Ronaldo</option>
+			<option>Batista</option>
+			<option>Kareka</option>
+			<option>Branco</option>
+		</options>
+		<answer>134</answer>
+	</question>
+	<question category="boolean" id="828"> 
+		<instructions>Select one or more answer</instructions>
+		<statement>what is the most colorful object</statement>
+		<options>
+			<option ans="t">ball</option>
+			<option ans="f">car</option>		
+		</options>
+		<answer>A</answer>
+	</question>
+	<question category="match" id="284"> <!-- 	Can select only one answer-->
+		<instructions>Match left with right</instructions>
+		<statement>what type of variable match</statement>
+		<options>
+			<option ans="0-a">String</option>
+			<option ans="1-b">boolean</option>
+			<option ans="2-c">short</option>
+			<option ans="3-d">float</option>
+			<option ans="a-0">anything with characters</option>
+			<option ans="b-1">true or false</option>
+			<option ans="c-2">between five thousand and zero</option>
+			<option ans="d-3">numbers with decimal point</option>
+		</options>
+		<answer>134</answer>
+	</question>
+	<question category="order" id="920"> 
+		<instructions>Order the four oceans with the largest first</instructions>
+		<statement>what is the most colorful object</statement>
+		<options>
+			<option ans="0-c">Pacific</option>
+			<option ans="1-b">Indian</option>	
+			<option ans="2-d">Ocean</option>		
+			<option ans="3-a">Atlantic</option>			
+		</options>
+		<answer>2341</answer>
+	</question>
+</questions>
