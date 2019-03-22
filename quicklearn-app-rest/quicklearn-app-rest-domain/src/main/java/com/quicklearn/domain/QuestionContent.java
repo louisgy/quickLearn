@@ -3,40 +3,45 @@ package com.quicklearn.domain;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class QuestionContent {
+	
 	private String category;
-	private String option;
+
 	private int id;
 	private String instructions;
 	private String statement;
-	private List <String> options;
-	private String answer;
+	private List <String []> options;
+
 	
 	public static final String
 		ID="id",
 		INSTRUCTIONS="instructions",
 		STATEMENT="statement",
 		OPTION="option",
-		ANSWER="answer",
+		ANSWER="ans",
 		CATEGORY="category";
+	    
 	
+	public QuestionContent() {
+		options = new ArrayList<String []>() ;
+	}
 	
-	public QuestionContent(String categorie, String option, int id, String instructions, String statement,
-			List<String> options, String answer) {
+	public QuestionContent(String category, int id, String instructions, String statement, List<String[]> options,
+			String answer) {
 		super();
 		this.category = category;
-		this.option = option;
 		this.id = id;
 		this.instructions = instructions;
 		this.statement = statement;
 		this.options = options;
-		this.answer = answer;
-	}
-	
 
-	
-	public QuestionContent() {
-		this.options =  new ArrayList<>();
+	}
+
+	public void addOptions(String option[]) {
+		this.options.add(option);
 	}
 
 	public String getCategory() {
@@ -47,12 +52,14 @@ public class QuestionContent {
 		this.category = category;
 	}
 
-	public String getOption() {
-		return option;
+
+
+	public int getId() {
+		return id;
 	}
 
-	public void setOption(String option) {
-		this.options.add(option);
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getInstructions() {
@@ -71,30 +78,14 @@ public class QuestionContent {
 		this.statement = statement;
 	}
 
-	public List<String> getOptions() {
+	public List<String[]> getOptions() {
 		return options;
 	}
 
-	public void setOptions(List<String> options) {
+	public void setOptions(List<String[]> options) {
 		this.options = options;
 	}
 
-	public String getAnswer() {
-		return answer;
-	}
 
-	public void setAnswer(String answer) {
-		this.answer = answer;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-	
-	
 	
 }

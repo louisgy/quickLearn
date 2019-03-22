@@ -9,7 +9,6 @@
 			<option ans="t">bird</option>
 			<option ans="f">dog</option>
 		</options>
-		<answer>134</answer>
 	</question>
     <question category="mult" id="978"> <!-- 	Can select only one answer-->
 		<instructions>Select one or more answer</instructions>
@@ -26,10 +25,10 @@
 		<instructions>Select one or more answer</instructions>
 		<statement>which player is the most payed</statement>
 		<options>
-			<option>Ronaldo</option>
-			<option>Batista</option>
-			<option>Kareka</option>
-			<option>Branco</option>
+			<option ans="f">Ronaldo</option>
+			<option ans="f">Batista</option>
+			<option ans="f">Kareka</option>
+			<option ans="f" >Branco</option>
 		</options>
 		<answer>134</answer>
 	</question>
