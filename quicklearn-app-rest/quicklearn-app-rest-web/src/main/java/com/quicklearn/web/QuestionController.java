@@ -33,7 +33,8 @@ public class QuestionController {
 		List <QuestionContent> questions = new ArrayList<QuestionContent>();
 		questions.add(q);
 		questions.add(a);
-		questionsProcessing.registerQuestions("qx.xml", questions);
+		//questionsProcessing.registerQuestions("qx.xml", questions);
+		questionsProcessing.regQuestions("qx.xml", questions);
 		return "ok";
 	}
  

@@ -11,12 +11,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import javax.xml.stream.XMLEventReader;
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLOutputFactory;
 import javax.xml.stream.XMLStreamConstants;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
 import javax.xml.stream.XMLStreamWriter;
+import javax.xml.stream.events.StartElement;
 import javax.xml.stream.events.XMLEvent;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -85,6 +87,48 @@ public class QuestionsProcessing {
 				return true;
 		}
 		return false;
+	}
+	
+	public void regQuestions(String fileName, List<QuestionContent> questions) throws IOException, XMLStreamException {
+		boolean isEmpty = true;
+		File f = new File(fileName);
+		if (!f.exists()) f.createNewFile();
+		
+		if(!(f.length() == 0)) isEmpty=false;
+		
+		XMLInputFactory xmlif = XMLInputFactory.newFactory();
+        FileReader fr = new FileReader(fileName);
+        XMLEventReader xmler = xmlif.createXMLEventReader(fr);
+        while (xmler.hasNext())
+        {
+           XMLEvent xmle = xmler.nextEvent();
+           switch (xmle.getEventType())
+           {
+              case XMLEvent.START_ELEMENT:
+            	  StartElement s = xmle.asStartElement();
+            	  String tagName = s.getName().getLocalPart();
+            	  System.out.println("\n\n"+"Start ELement : "+tagName+"\n\n");
+//                 out.println("START_ELEMENT");
+//                 out.printf("  Qname = %s%n",
+//                            ((StartElement) xmle). getName());
+                 break;
+              case XMLEvent.END_ELEMENT:
+//                 out.println("END_ELEMENT");
+//                 out.printf("  Qname = %s%n",
+//                            ((EndElement) xmle). getName());
+            	  break;
+            	default:
+            		break;
+           }
+        }
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	public void registerQuestions(String fileName, List<QuestionContent> questions)
