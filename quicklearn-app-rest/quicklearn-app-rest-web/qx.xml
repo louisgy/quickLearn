@@ -9,6 +9,7 @@
 			<option ans="t">bird</option>
 			<option ans="f">dog</option>
 		</options>
+		<explanation>animal that flies have wings</explanation>
 	</question>
     <question category="mult" id="978"> <!-- 	Can select only one answer-->
 		<instructions>Select one or more answer</instructions>
@@ -19,7 +20,7 @@
 			<option ans="f">USA</option>
 			<option ans="f">Canada</option>
 		</options>
-		<answer>134</answer>
+		<explanation></explanation>
 	</question>
 	<question category="order" id="748"> 
 		<instructions>Select one or more answer</instructions>
@@ -28,18 +29,17 @@
 			<option ans="f">Ronaldo</option>
 			<option ans="f">Batista</option>
 			<option ans="f">Kareka</option>
-			<option ans="f" >Branco</option>
+			<option ans="f">Branco</option>
 		</options>
-		<answer>134</answer>
 	</question>
 	<question category="boolean" id="828"> 
 		<instructions>Select one or more answer</instructions>
-		<statement>what is the most colorful object</statement>
+		<statement>Which language is easier to learn</statement>
 		<options>
-			<option ans="t">ball</option>
-			<option ans="f">car</option>		
+			<option ans="t">Java</option>
+			<option ans="f">Python</option>		
 		</options>
-		<answer>A</answer>
+		<explanation>Java is strongly typed and object-oriented</explanation>
 	</question>
 	<question category="match" id="284"> <!-- 	Can select only one answer-->
 		<instructions>Match left with right</instructions>
@@ -54,7 +54,7 @@
 			<option ans="c-2">between five thousand and zero</option>
 			<option ans="d-3">numbers with decimal point</option>
 		</options>
-		<answer>134</answer>
+		<explanation>String is about characters. boolean can be one or off which translates by true and false</explanation>
 	</question>
 	<question category="order" id="920"> 
 		<instructions>Order the four oceans with the largest first</instructions>
@@ -65,6 +65,6 @@
 			<option ans="2-d">Ocean</option>		
 			<option ans="3-a">Atlantic</option>			
 		</options>
-		<answer>2341</answer>
+		<explanation></explanation>
 	</question>
 </questions>

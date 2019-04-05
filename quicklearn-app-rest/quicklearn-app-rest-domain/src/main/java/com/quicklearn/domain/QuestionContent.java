@@ -13,7 +13,7 @@ public class QuestionContent {
 	private int id;
 	private String instructions;
 	private String statement;
-	private List <String []> options;
+	private List <String [][]> options;
 
 	
 	public static final String
@@ -26,10 +26,10 @@ public class QuestionContent {
 	    
 	
 	public QuestionContent() {
-		options = new ArrayList<String []>() ;
+		options = new ArrayList<String [][]>() ;
 	}
 	
-	public QuestionContent(String category, int id, String instructions, String statement, List<String[]> options,
+	public QuestionContent(String category, int id, String instructions, String statement, List<String[][]> options,
 			String answer) {
 		super();
 		this.category = category;
@@ -40,7 +40,7 @@ public class QuestionContent {
 
 	}
 
-	public void addOptions(String option[]) {
+	public void addOptions(String option[][]) {
 		this.options.add(option);
 	}
 
@@ -78,11 +78,11 @@ public class QuestionContent {
 		this.statement = statement;
 	}
 
-	public List<String[]> getOptions() {
+	public List<String[][]> getOptions() {
 		return options;
 	}
 
-	public void setOptions(List<String[]> options) {
+	public void setOptions(List<String[][]> options) {
 		this.options = options;
 	}
 
