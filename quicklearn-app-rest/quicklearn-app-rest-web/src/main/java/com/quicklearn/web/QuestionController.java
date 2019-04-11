@@ -63,6 +63,24 @@ public class QuestionController {
 
 	}
 	
+//	@PostMapping("/removeQuestions")
+//	public ResponseEntity<String> removeQuestion(@RequestParam(name = "id") int qid) throws JDOMException, IOException{
+//		if(questionsProcessingImpl.removeQuestion()) {
+//			return new ResponseEntity<>(HttpStatus.OK);
+//		}
+//		else
+//			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+//	}
+//	
+	@PostMapping("/removeQuestions")
+	public String removeQuestion(@RequestParam(name = "id") int qid) throws JDOMException, IOException {
+		if(questionsProcessingImpl.removeQuestion()) {
+			return "ok";
+		}
+		else
+			return "bad";
+	}
+	
 
 
 }

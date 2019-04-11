@@ -13,6 +13,15 @@ public class QuestionContent {
 	private int id;
 	private String instructions;
 	private String statement;
+	private String explanation;
+	public String getExplanation() {
+		return explanation;
+	}
+
+	public void setExplanation(String explanation) {
+		this.explanation = explanation;
+	}
+
 	private List <String [][]> options;
 
 	
@@ -86,6 +95,12 @@ public class QuestionContent {
 		this.options = options;
 	}
 
+	@Override
+	public String toString() {
+		return "QuestionContent [category=" + category + ", id=" + id + ", instructions=" + instructions
+				+ ", statement=" + statement + ", options=" + options + "]";
+	}
+	
 
 	
 }
